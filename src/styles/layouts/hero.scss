@@ -1,0 +1,87 @@
+@use "../heleprs" as *;
+
+.hero {
+  position: relative;
+
+  &__inner {
+    display: grid;
+    gap: rem(32px);
+  }
+
+  &__image {
+    &-wrapper {
+      @include tablet {
+        grid-area: 1/1;
+      }
+
+      @include desktop {
+        display: grid;
+        width: 68.75%;
+        background-color: var(--color-grey-900);
+      }
+    }
+
+    @include tablet {
+      width: 57%;
+      max-height: rem(700px);
+    }
+
+    @include desktop {
+      justify-self: end;
+      max-width: rem(540px);
+      max-height: rem(800px);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: fluid(32px, 64px, 375px, 1024px);
+    padding-inline: rem(16px);
+
+    @include tablet {
+      grid-area: 1/1;
+      justify-self: end;
+      align-self: center;
+      max-width: calc(rem(339px) + rem(40px) * 2);
+      max-height: 394px;
+      padding-inline: rem(40px);
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: fluid(32px, 64px, 375px, 1024px);
+
+    @include desktop {
+      grid-area: 1 / 1;
+      width: calc(rem(350px) + rem(165px));
+      height: 291px;
+      justify-self: end;
+      align-self: center;
+      padding-right: 165px;
+    }
+  }
+
+
+  &__title {
+    font-family: var(--font-family-base);
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--color-grey-900);
+
+    @include tablet {
+      font-size: 70px;
+    }
+
+    @include desktop {
+      position: absolute;
+      top: rem(190px);
+      left: rem(165px);
+      font-size: 96px;
+      color: var(--color-white);
+      mix-blend-mode: difference;
+    }
+  }
+}
