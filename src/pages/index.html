@@ -15,6 +15,62 @@
   <title>Art Gallery | Frontend Mentor</title>
 </head>
 <body>
+  <main>
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+      aria-describedby="hero-description"
+    >
+      <div class="hero__inner">
+        <div class="hero__image-wrapper">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="/images/desktop/image-hero.jpg 1x, /images/desktop/image-hero@2x.jpg 2x"
+              type="image/jpeg"
+            >
+            <source
+              media="(min-width: 768px)"
+              srcset="/images/tablet/image-hero.jpg 1x, /images/tablet/image-hero@2x.jpg 2x"
+              type="image/jpeg"
+            >
+            <img
+              class="hero__image"
+              src="/images/mobile/image-hero.jpg"
+              srcset="/images/mobile/image-hero.jpg 1x, /images/mobile/image-hero@2x.jpg 2x"
+              alt=""
+              width="375"
+              height="240"
+            >
+          </picture>
+        </div>
+        <div class="hero__body">
+          <h1 class="hero__title">MODERN <br /> ART GALLERY</h1>
+          <div class="hero__content">
+            <p class="hero__description">The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
+            <a
+              class="hero__link link-button"
+              href="./location.html"
+            >
+              OUR LOCATION
+              <svg
+                width="10"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  stroke="#FFF"
+                  fill="none"
+                  d="m1 0 8 12-8 12"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <script
     type="module"
     src="/src/scripts/app.js"

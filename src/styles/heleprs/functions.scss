@@ -1,0 +1,23 @@
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:color';
+@use "sass:meta";
+
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+@function rem($px, $base: 16px) {
+  @return math.div(strip-unit($px), strip-unit($base)) * 1rem;
+}
+
+@function fluid($min, $max, $min-vw: 375px, $max-vw: 1440px) {
+  $slope: math.div(strip-unit($max - $min), strip-unit($max-vw - $min-vw));
+  $intercept: strip-unit($min) - $slope * strip-unit($min-vw);
+  $preferred: calc(#{$intercept * 1px} + #{$slope * 100}vw);
+
+  @return clamp(#{$min}, #{$preferred}, #{$max});
+}

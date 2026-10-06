@@ -1,0 +1,38 @@
+@use "../heleprs" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family-second);
+  font-weight: 300;
+  font-size: fluid(18px, 22px, 768px, 1024px);
+  line-height: 1.4;
+  color: var(--color-grey-700);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
