@@ -1,0 +1,51 @@
+@use "../heleprs" as *;
+
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 270px;
+  width: 100%;
+  height: rem(72px);
+  color: var(--color-white);
+  background-color: var(--color-grey-900);
+  transition: background-color 0.2s ease;
+
+  @include hover {
+    background-color: var(--color-gold-500);
+
+    .link-button__icon-wrapper {
+      background-color: var(--color-grey-900);
+    }
+  }
+
+  @include focus-visible(var(--color-gold-500), 4px, 3px);
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: rem(32px);
+    font-family: var(--font-family-base);
+    font-weight: 700;
+    font-size: rem(20px);
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    stroke-width: 2px;
+    stroke: var(--color-white);
+
+    &-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(56px);
+      height: 100%;
+      background-color: var(--color-gold-500);
+      transition: background-color 0.2s ease;
+    }
+  }
+}

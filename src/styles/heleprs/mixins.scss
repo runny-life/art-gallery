@@ -14,7 +14,7 @@
 
 @mixin focus-visible($color: var(--color-gold-500), $width: 2px, $offset: 2px) {
   &:focus-visible {
-    outline: $width dashed $color;
+    outline: $width solid $color;
     outline-offset: $offset;
   }
 }
