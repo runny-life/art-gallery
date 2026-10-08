@@ -1,0 +1,80 @@
+@use "../heleprs" as *;
+
+.inspired {
+  &__inner {
+    display: grid;
+    gap: 16px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: rem(635px) auto;
+      gap: rem(30px);
+    }
+  }
+
+  &__image {
+    @include tablet {
+      max-height: rem(313px);
+    }
+
+    &--big {
+      @include tablet {
+        max-height: rem(720px);
+        height: 100%;
+      }
+    }
+  }
+
+  &__line {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+
+    @include tablet {
+      gap: rem(12px);
+    }
+
+    @include desktop {
+      gap: rem(32px);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(24px, 32px, 768px, 1024px);
+    padding-block: rem(48px);
+    padding-inline: rem(24px);
+    color: var(--color-white);
+    background-color: var(--color-grey-900);
+
+    @include tablet {
+      grid-area: content;
+      max-height: rem(396px);
+      padding-block: rem(80px);
+      padding-inline: rem(32px);
+    }
+
+    @include desktop {
+      max-height: rem(377px);
+      padding-block: rem(64px);
+      padding-inline: rem(48px);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family-base);
+    font-size: fluid(50px, 60px, 768px, 1024px);
+    font-weight: 800;
+    line-height: 0.9;
+
+    @include desktop {
+      line-height: 1;
+    }
+  }
+
+
+}

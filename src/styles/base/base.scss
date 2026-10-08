@@ -38,6 +38,8 @@ a {
   --container-padding-x: 16px;
   --container-padding-y: 100px;
 
+  display: grid;
+  gap: rem(32px);
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   width: 100%;
   padding-inline: var(--container-padding-x);
@@ -47,11 +49,15 @@ a {
   @include tablet {
     --container-padding-x: 40px;
     --container-padding-y: 120px;
+
+    gap: rem(12px);
   }
 
   @include desktop {
     --container-padding-x: 165px;
     --container-padding-y: 180px;
+
+    gap: rem(32px);
   }
 }
 
