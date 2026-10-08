@@ -1,0 +1,25 @@
+@use "../heleprs" as *;
+
+.socials {
+  display: flex;
+  align-items: start;
+  gap: rem(20px);
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: color 0.2s ease;
+
+    @include hover {
+      color: var(--color-gold-500);
+    }
+
+    @include focus-visible(var(--color-gold-500), 4px, 3px);
+
+    & svg * {
+      fill: currentColor;
+    }
+  }
+}
