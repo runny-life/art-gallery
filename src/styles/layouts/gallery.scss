@@ -1,0 +1,54 @@
+@use "../heleprs" as *;
+
+.gallery {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24px);
+
+    @include tablet {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    max-height: rem(320px);
+
+    @include tablet {
+      max-height: rem(400px);
+    }
+
+    @include desktop {
+      max-width: rem(635px);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(24px, 32px, 768px, 1024px);
+
+    @include tablet {
+      max-width: rem(223px);
+    }
+
+    @include desktop {
+      max-width: rem(350px);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family-base);
+    font-size: fluid(50px, 60px, 768px, 1024px);
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--color-grey-900);
+
+    @include desktop {
+      line-height: 1;
+    }
+  }
+}

@@ -33,6 +33,28 @@ a {
   cursor: pointer;
 }
 
+.container {
+  --container-width: 1110px;
+  --container-padding-x: 16px;
+  --container-padding-y: 100px;
+
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  width: 100%;
+  padding-inline: var(--container-padding-x);
+  padding-block: var(--container-padding-y);
+  margin-inline: auto;
+
+  @include tablet {
+    --container-padding-x: 40px;
+    --container-padding-y: 120px;
+  }
+
+  @include desktop {
+    --container-padding-x: 165px;
+    --container-padding-y: 180px;
+  }
+}
+
 .visually-hidden {
   @include visually-hidden;
 }
