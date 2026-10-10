@@ -16,15 +16,17 @@
       color: var(--color-gold-500);
     }
 
+    @include focus-visible(var(--color-gold-500), 4px, 3px);
+
     &--location {
       color: var(--color-grey-900);
 
       @include hover {
         color: var(--color-white);
       }
-    }
 
-    @include focus-visible(var(--color-gold-500), 4px, 3px);
+      @include focus-visible(var(--color-grey-900), 4px, 3px);
+    }
 
     & svg * {
       fill: currentColor;

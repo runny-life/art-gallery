@@ -7,7 +7,40 @@
     <title>Location | Frontend Mentor</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <section class="map">
+        <a class="map__link link-button link-button--back" href="./index.html">
+          <span class="link-button__text">BACK TO HOME</span>
+          <span class="link-button__icon-wrapper">
+            <svg width="10" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke="#FFF" fill="none" d="M9 24 1 12 9 0" />
+            </svg>
+          </span>
+        </a>
+      </section>
+      <section
+        class="location-info"
+        aria-labelledby="location-info-title"
+        aria-describedby="location-info-description"
+      >
+        <div class="location-info container">
+          <h2 class="location-info__title" id="location-info-title">OUR LOCATION</h2>
+          <div class="location-info__content">
+            <h3 class="location-info__subtitle">99 King Street</h3>
+            <address class="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <span itemprop="addressLocality">Newport</span>,
+              <abbr itemprop="addressRegion" title="Rhode Island">RI</abbr>
+              <span itemprop="postalCode">02840</span><br />
+              <span itemprop="addressCountry">United States of America</span>
+            </address>
+            <p class="location-info__description" id="location-info-description">
+              Our newly opened gallery is located near the Edward King House on 99 King Street, the
+              Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer footer--location">
       <div class="footer__inner">
         <div class="footer__content">

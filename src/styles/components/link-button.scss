@@ -1,4 +1,4 @@
-@use "../heleprs" as *;
+@use '../heleprs' as *;
 
 .link-button {
   display: flex;
@@ -10,6 +10,10 @@
   color: var(--color-white);
   background-color: var(--color-grey-900);
   transition: background-color 0.2s ease;
+
+  &--back {
+    flex-direction: row-reverse;
+  }
 
   @include hover {
     background-color: var(--color-gold-500);
