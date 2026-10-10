@@ -8,6 +8,7 @@ export default defineConfig({
   publicDir: resolve(import.meta.dirname, "public"),
   resolve: {
     alias: {
+      "@public": resolve(import.meta.dirname, "./public"),
       "/src": resolve(import.meta.dirname, "src"),
     },
   },

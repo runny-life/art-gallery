@@ -1,8 +1,13 @@
-@use "../heleprs" as *;
+@use '../heleprs' as *;
 
 .footer {
   color: var(--color-white);
   background-color: var(--color-grey-900);
+
+  &--location {
+    color: var(--color-grey-900);
+    background-color: var(--color-gold-500);
+  }
 
   &__inner {
     display: flex;

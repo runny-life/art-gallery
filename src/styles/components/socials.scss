@@ -1,4 +1,4 @@
-@use "../heleprs" as *;
+@use '../heleprs' as *;
 
 .socials {
   display: flex;
@@ -14,6 +14,14 @@
 
     @include hover {
       color: var(--color-gold-500);
+    }
+
+    &--location {
+      color: var(--color-grey-900);
+
+      @include hover {
+        color: var(--color-white);
+      }
     }
 
     @include focus-visible(var(--color-gold-500), 4px, 3px);

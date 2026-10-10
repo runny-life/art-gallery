@@ -9,12 +9,18 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   font-family: var(--font-family-second);
   font-weight: 300;
   font-size: fluid(18px, 22px, 768px, 1024px);
   line-height: 1.4;
   color: var(--color-grey-700);
+}
+
+main {
+  flex: 1;
 }
 
 img {
