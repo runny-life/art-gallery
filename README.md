@@ -1,102 +1,135 @@
-# Frontend Mentor - Art gallery website
+# Frontend Mentor - Art Gallery Website Solution
 
-![Design preview for the Art gallery website coding challenge](./preview.jpg)
+This is my solution to the [Art Gallery website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/art-gallery-website-yVdrZlxyA). The project is a responsive landing page for a modern art gallery, with a separate location page featuring an interactive map.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+- [Frontend Mentor - Art Gallery Website Solution](#frontend-mentor---art-gallery-website-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshots](#screenshots)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [Features](#features)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+    - [AI collaboration](#ai-collaboration)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Overview
 
-**To do this challenge, you need a good understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
+The goal was to build a responsive art gallery website that adapts to mobile, tablet, and desktop screen sizes. The site should include interactive hover states and, as a bonus, an interactive map with a custom location marker.
 
-Your challenge is to build out this art gallery website and get it looking as close to the design as possible.
+### Screenshots
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+Add screenshots of the homepage and location page here when they are ready:
 
-Your users should be able to:
+- Homepage: ![Screenshot home page](home-page.png)
+- Location page: ![Screenshot location page](location-page.png)
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements throughout the site
-- **Bonus**: Use [Leaflet JS](https://leafletjs.com/) to create an interactive location map with custom location pin
+### Links
 
-### Want some support on the challenge?
+- Solution URL: [GitHub repository](https://github.com/runny-life/art-gallery)
+- Live Site URL: [Github pages](https://runny-life.github.io/art-gallery/)
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. **Please be sure not to share the Figma design file with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+- Semantic HTML5
+- SCSS (Sass)
+- CSS custom properties
+- CSS Grid and Flexbox
+- Responsive, mobile-first layouts
+- Responsive images with `<picture>` and `srcset`
+- JavaScript modules
+- [Vite](https://vite.dev/) for development and production builds
+- [Leaflet](https://leafletjs.com/) for the interactive map
+- [CARTO](https://carto.com/) map tiles and [OpenStreetMap](https://www.openstreetmap.org/) attribution
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. We provide 1x and 2x sizes for each image. You can choose how to use them based on different screen sizes and resolutions. We've provided an image of the map with the location pin, but you can use the `icon-location.svg` asset if you're doing the bonus challenge.
+### Features
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project. Our fonts always come from [Google Fonts](https://fonts.google.com/).
+- Responsive homepage and location page.
+- Gallery layout that adapts to different viewport widths.
+- Responsive image assets for mobile, tablet, and desktop, including high-density variants.
+- Reusable SCSS styles, variables, mixins, and helper functions.
+- Navigation between the homepage and location page.
+- Interactive Leaflet map centered on Newport, Rhode Island.
+- Custom-styled main map marker and additional points of interest.
+- Popups for map markers and tooltips for nearby locations.
+- Hover states and transitions for interactive elements.
+- Social links in the footer.
 
-## Using AI coding assistants
+### What I learned
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+While building this project, I practised structuring a multi-page site with semantic HTML and organising styles into smaller SCSS modules.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+Some of the main topics I worked with:
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+- **Responsive images:** using `<picture>`, media conditions, and `srcset` to serve appropriate image sizes for different screens.
+- **Responsive layouts:** combining Grid and Flexbox with breakpoints to adapt the gallery sections to mobile, tablet, and desktop.
+- **SCSS organisation:** splitting styles into base styles, components, layout sections, variables, mixins, and helper functions.
+- **JavaScript modules:** importing the map library and stylesheet into the application entry point.
+- **Leaflet custom markers:** creating markers with `L.divIcon()`, inline SVG, custom anchor points, popups, and tooltips.
+- **Multi-page navigation:** linking the homepage to a separate location page.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+Example of creating a custom Leaflet marker:
 
-## Building your project
+```js
+const poiIcon = (svgPath) =>
+  L.divIcon({
+    className: 'poi-marker',
+    html: `
+      <div class="poi-marker__bubble">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white"
+             stroke-width="2.2" stroke-linecap="round"
+             stroke-linejoin="round">
+          ${svgPath}
+        </svg>
+      </div>
+    `,
+    iconSize: [26, 26],
+    iconAnchor: [13, 13],
+  });
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+This approach makes it possible to reuse one marker factory while passing a different SVG icon for each point of interest.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the Figma design file to GitHub. With these premium challenges, please be sure not to share the Figma design file in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Continued development
 
-## Deploying your project
+In future projects, I want to keep improving:
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- Accessibility, including keyboard focus styles and clear focus indicators for links and controls.
+- Responsive behaviour across a wider range of screen sizes.
+- SCSS architecture and the maintainability of reusable styles.
+- JavaScript fundamentals and writing smaller, easier-to-test functions.
+- Performance and production checks, including image optimisation and testing the final build.
+- Cross-browser testing and checking the site with keyboard navigation.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### Useful resources
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+- [Frontend Mentor](https://www.frontendmentor.io/) — the challenge brief and design files.
+- [MDN Web Docs](https://developer.mozilla.org/) — reference for HTML, CSS, JavaScript, and responsive images.
+- [Sass documentation](https://sass-lang.com/documentation/) — SCSS syntax and stylesheet organisation.
+- [Vite documentation](https://vite.dev/guide/) — development server and production builds.
+- [Leaflet documentation](https://leafletjs.com/reference.html) — map setup, markers, popups, and tooltips.
+- [OpenStreetMap](https://www.openstreetmap.org/) — map data and project information.
 
-## Create a custom `README.md`
+### AI collaboration
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+ChatGPT was used to help prepare and structure this README. The project details above are based on the files and implementation in this repository.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+## Author
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+- Website: [GitHub](https://github.com/runny-life)
+- Frontend Mentor: [runny-life](https://www.frontendmentor.io/profile/runny-life)
 
-## Submitting your solution
+## Acknowledgments
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the Figma design file to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+Thanks to Frontend Mentor for providing the challenge and design resources, and to the maintainers of Vite, Sass, and Leaflet for their documentation and tools.
