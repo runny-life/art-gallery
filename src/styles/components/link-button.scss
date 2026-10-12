@@ -7,6 +7,7 @@
   max-width: 270px;
   width: 100%;
   height: rem(72px);
+  white-space: nowrap;
   color: var(--color-white);
   background-color: var(--color-grey-900);
   transition: background-color 0.2s ease;
@@ -39,9 +40,6 @@
   }
 
   &__icon {
-    stroke-width: 2px;
-    stroke: var(--color-white);
-
     &-wrapper {
       display: inline-flex;
       align-items: center;
@@ -50,6 +48,11 @@
       height: 100%;
       background-color: var(--color-gold-500);
       transition: background-color 0.2s ease;
+
+      & svg {
+        stroke-width: 2px;
+        stroke: var(--color-white);
+      }
     }
   }
 }

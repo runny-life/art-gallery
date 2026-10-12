@@ -1,11 +1,12 @@
 /*Base*/
-@use "./base/fonts";
-@use "./base/base";
+@use './base/fonts';
+@use './base/base';
 /*Components*/
-@use "./components/link-button";
-@use "./components/socials";
+@use './components/link-button';
+@use './components/socials';
 /*Layouts*/
-@use "./layouts/hero";
-@use "./layouts/gallery";
-@use "./layouts/inspired";
-@use "./layouts/footer";
+@use './layouts/hero';
+@use './layouts/gallery';
+@use './layouts/inspired';
+@use './layouts/map.scss';
+@use './layouts/footer';

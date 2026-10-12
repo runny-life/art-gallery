@@ -1,0 +1,27 @@
+@use '../heleprs' as *;
+
+.map {
+  position: relative;
+  min-height: rem(550px);
+  width: 100%;
+  background-color: var(--color-grey-700);
+
+  @include tablet {
+    min-height: rem(600px);
+  }
+
+  &__link {
+    position: absolute;
+    top: rem(10px);
+    left: rem(10px);
+
+    @include tablet {
+      top: rem(16px);
+      left: rem(40px);
+    }
+
+    @include desktop {
+      left: rem(156px);
+    }
+  }
+}
