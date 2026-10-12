@@ -1,0 +1,78 @@
+@use '../heleprs' as *;
+
+.location-info {
+  padding-block: rem(80px);
+  color: var(--color-white);
+  background-color: var(--color-grey-900);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(48px);
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    max-width: rem(223px);
+    font-family: var(--font-family-base);
+    font-size: rem(55px);
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+
+    @include desktop {
+      max-width: rem(350px);
+      font-size: rem(70px);
+      line-height: 1;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+
+    @include tablet {
+      max-width: rem(398px);
+    }
+
+    @include desktop {
+      gap: rem(32px);
+      max-width: rem(540px);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+
+    @include desktop {
+      gap: rem(24px);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family-base);
+    font-size: rem(36px);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-gold-500);
+  }
+
+  &__address {
+    font-size: rem(18px);
+    font-weight: 300;
+    line-height: 1.4;
+    font-style: normal;
+
+    & abbr {
+      text-decoration: none;
+    }
+  }
+}

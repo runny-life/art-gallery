@@ -1,4 +1,4 @@
-@use "../heleprs" as *;
+@use '../heleprs' as *;
 
 .hero {
   position: relative;
@@ -68,7 +68,6 @@
       align-self: center;
     }
   }
-
 
   &__title {
     font-family: var(--font-family-base);

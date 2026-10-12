@@ -23,16 +23,22 @@
         aria-labelledby="location-info-title"
         aria-describedby="location-info-description"
       >
-        <div class="location-info container">
+        <div class="location-info__inner container">
           <h2 class="location-info__title" id="location-info-title">OUR LOCATION</h2>
-          <div class="location-info__content">
-            <h3 class="location-info__subtitle">99 King Street</h3>
-            <address class="address" itemscope itemtype="https://schema.org/PostalAddress">
-              <span itemprop="addressLocality">Newport</span>,
-              <abbr itemprop="addressRegion" title="Rhode Island">RI</abbr>
-              <span itemprop="postalCode">02840</span><br />
-              <span itemprop="addressCountry">United States of America</span>
-            </address>
+          <div class="location-info__body">
+            <div class="location-info__content">
+              <h3 class="location-info__subtitle">99 King Street</h3>
+              <address
+                class="location-info__address"
+                itemscope
+                itemtype="https://schema.org/PostalAddress"
+              >
+                <span itemprop="addressLocality">Newport</span><br />
+                <abbr itemprop="addressRegion" title="Rhode Island">RI</abbr>
+                <span itemprop="postalCode">02840</span><br />
+                <span itemprop="addressCountry">United States of America</span>
+              </address>
+            </div>
             <p class="location-info__description" id="location-info-description">
               Our newly opened gallery is located near the Edward King House on 99 King Street, the
               Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.

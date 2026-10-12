@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:color';
-@use "sass:meta";
+@use 'sass:meta';
 
 @function strip-unit($number) {
   @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
